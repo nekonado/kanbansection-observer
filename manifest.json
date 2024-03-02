@@ -1,0 +1,27 @@
+{
+  "name": "Kanbansection Observer",
+  "description": "Backlog（nulab）のカンバンボードでWIP制限を実施するためのものです。状態セクション毎にWIPの最大数を設定し、超過した場合に協調表示を行うことができます。",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "options_page": "src/options.html",
+  "action": {
+    "default_popup": "src/popup.html",
+    "default_icon": {
+      "128": "img/logo128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.backlog.com/board/*"
+      ],
+      "js": [
+        "src/content.js"
+      ]
+    }
+  ]
+}
