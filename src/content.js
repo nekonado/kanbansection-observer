@@ -79,16 +79,16 @@ function clearStyles(status) {
   }
 }
 
-// liCount のチェックを行う関数
-function checkLiCount(
+// wipLimit のチェックを行う関数
+function checkWipLimit(
   targetElement,
-  liCount,
-  onLiCountMatch,
-  onLiCountMismatch
+  wipLimit,
+  onWipLimitMatch,
+  onWipLimitMismatch
 ) {
   if (targetElement) {
     const listItems = targetElement.querySelectorAll("li");
-    const draggableFalseLiCount = Array.from(listItems).reduce(
+    const draggableFalseWipLimit = Array.from(listItems).reduce(
       (count, listItem) => {
         const draggableAttributeValue = listItem.getAttribute("draggable");
         if (
@@ -102,13 +102,13 @@ function checkLiCount(
       0
     );
 
-    if (draggableFalseLiCount >= liCount) {
-      onLiCountMatch();
+    if (draggableFalseWipLimit > wipLimit) {
+      onWipLimitMatch();
     } else {
-      onLiCountMismatch();
+      onWipLimitMismatch();
     }
   } else {
-    onLiCountMismatch();
+    onWipLimitMismatch();
   }
 }
 
@@ -116,12 +116,12 @@ function checkLiCount(
 function findTargetElementAndApplyStyles() {
   getOptions()
     .then((optionSets) => {
-      optionSets.forEach(({ status, color, liCount }) => {
+      optionSets.forEach(({ status, color, wipLimit }) => {
         const targetElement = findTargetElement(status);
-        // liCount のチェックを行い、スタイルを適用またはクリア
-        checkLiCount(
+        // wipLimit のチェックを行い、スタイルを適用またはクリア
+        checkWipLimit(
           targetElement,
-          liCount,
+          wipLimit,
           () => {
             applyStyles(status, color);
           },
@@ -149,7 +149,7 @@ observer.observe(document.body, {
 findTargetElementAndApplyStyles();
 
 // メッセージ受信時の処理
-chrome.runtime.onMessage.addListener(function (message) {
+chrome.runtime.onMessage.addListener((message) => {
   // メッセージがチェックボックスの状態変更関連であるかを確認
   if (message.type === "checkboxStateChanged") {
     // チェックボックスの状態に応じて背景色を設定するかどうかを判断
