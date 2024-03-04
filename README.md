@@ -15,7 +15,7 @@
 
 # Kanbansection Observer
 
-Kanbansection Observer は、Backlog (nulab) のカンバンボードの利便性を向上させるための Chrome 拡張機能です。この拡張機能は、カンバンボードの各セクションを観察し、WIP 制限を超えたセクションを強調表示します。また、オプションページを提供し、状態ごとの WIP 最大数の個別設定や強調表示の色をカスタマイズすることができます。
+Kanbansection Observer は、[Backlog (Nulab Inc.)](https://backlog.com/ja/) のカンバンボードの利便性を向上させるための Chrome 拡張機能です。この拡張機能は、カンバンボードの各セクションを観察し、WIP 制限を超えたセクションを強調表示します。また、オプションページを提供し、状態ごとの WIP リミット数の個別設定や強調表示の色をカスタマイズすることができます。
 
 ## 機能
 
@@ -26,10 +26,14 @@ Kanbansection Observer は、Backlog (nulab) のカンバンボードの利便�
 
 - **オプションページ**
 
-  WIP とできる最大のチケット数や、設定される色についてカスタマイズできるオプションページを提供します。
+  状態ごとの WIP リミット数、強調表示の色についてカスタマイズできるオプションページを提供します。
   ![demo2](./img/demo-2.png)
 
-## インストール方法
+## インストール
+
+[Chrome ウェブストア](https://chromewebstore.google.com/detail/kanbansection-observer/mpdokkleihjigkcikbibmimekikdpmam)からインストールしてください。ウェブストアに未公開の最新バージョンを使用したい場合は、以下の手順に従って手動でインストールしてください。
+
+### 手動インストール手順
 
 1. 任意のディレクトリにリポジトリをクローンします。
 
@@ -43,9 +47,9 @@ Kanbansection Observer は、Backlog (nulab) のカンバンボードの利便�
 
 ## 使用方法
 
-Kanbansection Observer をインストールして、Backlog プロジェクトページにアクセスした後、オプションページを開いてカスタマイズをします。カスタマイズが完了したら、カンバンボードの各セクションに対して、WIP 制限を超えたセクションが強調表示されるようになります。具体的な操作方法については、以下のデモ動画を参照してください。
+Kanbansection Observer をインストールして、Backlog プロジェクトページにアクセスした後、オプションページを開いてカスタマイズをします。カスタマイズが完了したら、カンバンボードの各状態セクションに対して、WIP 制限を超えたセクションが強調表示されるようになります。具体的な操作方法については、以下のデモ動画を参照してください。
 
-👉 [デモ動画を見る](https://www.youtube.com/watch?v=Ig-jigeorMw)
+👉 [デモ動画を見る](https://www.youtube.com/watch?v=i8-I_df_vXM)
 
 ## 貢献方法
 

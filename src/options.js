@@ -1,77 +1,37 @@
 // 推奨のカラーコード
 const recommendedColor = "#DDFF00";
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const optionsContainer = document.getElementById("options-container");
   const addOptionSetButton = document.getElementById("add-option-set");
   const saveOptionsButton = document.getElementById("saveOptions");
-  const resetColorsButton = document.getElementById("resetColors"); // 追加
+  const resetColorsButton = document.getElementById("resetColors");
 
   // 初期表示時に保存された値を取得して反映
-  chrome.storage.sync.get({ optionSets: [] }, function (result) {
+  chrome.storage.sync.get({ optionSets: [] }, (result) => {
     result.optionSets.forEach(addOptionSet);
   });
 
   // 「Add Option Set」ボタンのクリックイベント
-  addOptionSetButton.addEventListener("click", function () {
+  addOptionSetButton.addEventListener("click", () => {
     addOptionSet();
   });
 
   // 「Save Options」ボタンのクリックイベント
-  saveOptionsButton.addEventListener("click", function () {
+  saveOptionsButton.addEventListener("click", () => {
     saveOptions();
   });
 
   // 「Reset Colors」ボタンのクリックイベント
-  resetColorsButton.addEventListener("click", function () {
+  resetColorsButton.addEventListener("click", () => {
     resetColors();
   });
-
-  // 保存処理
-  function saveOptions() {
-    // フラグを初期化
-    let hasEmptyInput = false;
-
-    const optionSets = Array.from(optionsContainer.children).map(
-      (optionSet) => {
-        const status = optionSet.querySelector(".status-input").value;
-        const color = optionSet.querySelector(".color-input").value;
-        const liCount = optionSet.querySelector(".li-count-input").value;
-
-        // いずれかの input が空であればフラグを立てる
-        if (!status || !color || !liCount) {
-          hasEmptyInput = true;
-        }
-
-        return { status, color, liCount };
-      }
-    );
-
-    // フラグが立っていれば alert を表示して保存を中止
-    if (hasEmptyInput) {
-      window.alert("Please fill in all input fields before applying options.");
-      return;
-    }
-
-    chrome.storage.sync.set({ optionSets }, function () {
-      console.log("Options applied: ", optionSets);
-    });
-  }
-
-  // リセット処理
-  function resetColors() {
-    // すべての色を推奨のカラーコードに設定
-    const colorInputs = optionsContainer.querySelectorAll(".color-input");
-    colorInputs.forEach((input) => {
-      input.value = recommendedColor;
-    });
-  }
 
   // 新しい条件入力欄を追加
   function addOptionSet({
     status = "",
     color = recommendedColor,
-    liCount = "",
+    wipLimit = "",
   } = {}) {
     const newOptionSet = document.createElement("div");
     newOptionSet.classList.add("option-set");
@@ -83,12 +43,12 @@ document.addEventListener("DOMContentLoaded", function () {
     statusInput.classList.add("status-input");
     statusInput.value = status;
 
-    const liCountLabel = document.createElement("label");
-    liCountLabel.textContent = "Max WIP";
-    const liCountInput = document.createElement("input");
-    liCountInput.type = "number";
-    liCountInput.classList.add("li-count-input");
-    liCountInput.value = liCount;
+    const wipLimitLabel = document.createElement("label");
+    wipLimitLabel.textContent = "WIP Limit";
+    const wipLimitInput = document.createElement("input");
+    wipLimitInput.type = "number";
+    wipLimitInput.classList.add("wip-limit-input");
+    wipLimitInput.value = wipLimit;
 
     const colorLabel = document.createElement("label");
     colorLabel.textContent = "Color";
@@ -100,18 +60,61 @@ document.addEventListener("DOMContentLoaded", function () {
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
     deleteButton.classList.add("delete-button");
-    deleteButton.addEventListener("click", function () {
+    deleteButton.addEventListener("click", () => {
       optionsContainer.removeChild(newOptionSet);
     });
 
     newOptionSet.appendChild(statusLabel);
     newOptionSet.appendChild(statusInput);
-    newOptionSet.appendChild(liCountLabel);
-    newOptionSet.appendChild(liCountInput);
+
+    newOptionSet.appendChild(wipLimitLabel);
+    newOptionSet.appendChild(wipLimitInput);
+
     newOptionSet.appendChild(colorLabel);
     newOptionSet.appendChild(colorInput);
+
     newOptionSet.appendChild(deleteButton);
 
     optionsContainer.appendChild(newOptionSet);
+  }
+
+  // 保存処理
+  function saveOptions() {
+    // フラグを初期化
+    let hasEmptyInput = false;
+
+    const optionSets = Array.from(optionsContainer.children).map(
+      (optionSet) => {
+        const status = optionSet.querySelector(".status-input").value;
+        const color = optionSet.querySelector(".color-input").value;
+        const wipLimit = optionSet.querySelector(".wip-limit-input").value;
+
+        // いずれかの input が空であればフラグを立てる
+        if (!status || !color || !wipLimit) {
+          hasEmptyInput = true;
+        }
+
+        return { status, color, wipLimit };
+      }
+    );
+
+    // フラグが立っていれば alert を表示して保存を中止
+    if (hasEmptyInput) {
+      window.alert("Please fill in all input fields before applying options.");
+      return;
+    }
+
+    chrome.storage.sync.set({ optionSets }, () => {
+      console.log("Options applied: ", optionSets);
+    });
+  }
+
+  // リセット処理
+  function resetColors() {
+    // すべての色を推奨のカラーコードに設定
+    const colorInputs = optionsContainer.querySelectorAll(".color-input");
+    colorInputs.forEach((input) => {
+      input.value = recommendedColor;
+    });
   }
 });
