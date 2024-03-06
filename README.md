@@ -49,7 +49,7 @@ Kanbansection Observer は、[Backlog (Nulab Inc.)](https://backlog.com/ja/) の
 
 Kanbansection Observer をインストールして、Backlog プロジェクトページにアクセスした後、オプションページを開いてカスタマイズをします。カスタマイズが完了したら、カンバンボードの各状態セクションに対して、WIP 制限を超えたセクションが強調表示されるようになります。具体的な操作方法については、以下のデモ動画を参照してください。
 
-👉 [デモ動画を見る](https://www.youtube.com/watch?v=i8-I_df_vXM)
+👉 [デモ動画を見る](https://www.youtube.com/watch?v=Jj5IasT99XY)
 
 ## 貢献方法
 
