@@ -4,8 +4,8 @@ const recommendedColor = "#DDFF00";
 document.addEventListener("DOMContentLoaded", () => {
   const optionsContainer = document.getElementById("options-container");
   const addOptionSetButton = document.getElementById("add-option-set");
-  const saveOptionsButton = document.getElementById("saveOptions");
-  const resetColorsButton = document.getElementById("resetColors");
+  const saveOptionsButton = document.getElementById("save-options");
+  const resetColorsButton = document.getElementById("reset-colors");
 
   // 初期表示時に保存された値を取得して反映
   chrome.storage.sync.get({ optionSets: [] }, (result) => {
@@ -107,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     chrome.storage.sync.set({ optionSets }, () => {
       console.log("Options applied: ", optionSets);
     });
+    window.alert("Options saved successfully!");
   }
 
   // リセット処理

@@ -38,7 +38,7 @@ h1 {
 .option-set {
   display: flex;
   flex-direction: column;
-  width: calc(33.33% - 20px);
+  width: calc((100% / 4) - 20px);
   margin-bottom: 20px;
   padding: 10px;
   box-sizing: border-box;
@@ -87,4 +87,43 @@ button:hover {
 
 .delete-button:hover {
   background-color: #c0392b;
+}
+
+/* Tool Tip */
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+.tooltip-text:before {
+  content: "";
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  margin-left: -7px;
+  border: 7px solid transparent;
+  border-bottom: 7px solid #333333;
+}
+
+.tooltip-text {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -30px;
+  display: inline-block;
+  padding: 5px;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  background: #333333;
+  color: #ffffff;
+  border-radius: 3px;
+  transition: 0.3s ease-in;
+}
+
+.tooltip:hover .tooltip-text {
+  opacity: 1;
+  visibility: visible;
 }
