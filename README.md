@@ -11,6 +11,8 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/nekonado/kanbansection-observer?color=#00836b)
 ![GitHub](https://img.shields.io/github/stars/nekonado/kanbansection-observer?color=#00836b)
 
+[ 日本語 | [English](https://github.com/nekonado/kanbansection-observer/blob/main/README.en.md) ]
+
 ---
 
 # Kanbansection Observer
