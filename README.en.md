@@ -71,6 +71,4 @@ But that's not all. For those who've found this easter egg, here's another secre
 
 So, if this little joke added some fun to your day, we're glad. And if this extension enhances your experience with kanban boards, please share it with friends! The developer, [@nekonado](https://github.com/nekonado), looks forward to your feedback!
 
-...And that's a wrap, in the style of an American movie dub.
-
 </details>
