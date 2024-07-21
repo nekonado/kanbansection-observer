@@ -38,7 +38,7 @@ button {
   border-radius: 4px;
   background-color: #00836b;
   cursor: pointer;
-  color: white;
+  color: #ffffff;
 }
 
 button:hover {
@@ -77,7 +77,7 @@ button:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #cccccc;
   border-radius: 34px;
   cursor: pointer;
   transition: 0.4s;
@@ -92,7 +92,7 @@ button:hover {
   left: 4px;
   bottom: 4px;
   border-radius: 50%;
-  background-color: white;
+  background-color: #ffffff;
   transition: 0.4s;
   -webkit-transition: 0.4s;
 }
