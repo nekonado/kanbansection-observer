@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     chrome.tabs.query({ url: "https://*.backlog.com/board/*" }, (tabs) => {
       // 条件に一致するタブが見つかった場合
       if (tabs && tabs.length > 0) {
-        // ここでタブにメッセージを送信するなどの操作を行います
+        // タブにメッセージを送信
         const tabId = tabs[0].id;
         chrome.tabs.sendMessage(tabId, message);
       } else {
