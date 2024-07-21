@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "version": "1.2.3",
+  "version": "1.2.4",
   "name": "Kanbansection Observer",
   "description": "Backlog (Nulab Inc.) のカンバンボードでWIP制限を実施するためのものです。状態セクション毎にWIPの最大数を設定し、超過した場合に強調表示を行うことができます。",
   "author": {
