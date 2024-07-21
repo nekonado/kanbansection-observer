@@ -55,20 +55,3 @@ Kanbansection Observer をインストールして、Backlog プロジェクト�
 ## ライセンス
 
 このプロジェクトは MIT ライセンスの下で提供されています。詳細については、[LICENSE ファイル](https://github.com/nekonado/kanbansection-observer/blob/main/LICENSE)を参照してください。
-
----
-
-<details>
-<summary>🥚🥚🥚🥚🥚</summary>
-
-### 🐣 イースターエッグ: 「Kanbansection Observer」の秘密 🐣
-
-あなたがこのセクションを開いたということは、もしかして何か特別なものを探しているのかな？おめでとう、小さな秘密を見つけたよ！「Kanbansection Observer」という名前、聞いてピンと来た？そう、あの「Intersection Observer API」とのちょっとした掛け合わせだ。
-
-ここでの小さなジョークは、この拡張機能が実際には Intersection Observer API を使っていないという事実にちょっとした皮肉を加えているんだ（実際には Mutation Observer API を使って実装しているよ）。
-
-でも、それだけじゃない。このイースターエッグを見つけたあなたには、もう一つ秘密を教えよう。実は、この拡張機能を開発した理由は、ただ単に仕事の効率を上げるためだけではなかった。私たちは、カンバンボードだけでなく、あなたの日々の業務にも、もっと光をもたらしたいと思っているんだ。
-
-だから、この小さなジョークが、あなたの一日にちょっとした楽しさを加えることができたら嬉しいな。もし、この拡張機能があなたのカンバンボードの利用体験を向上させたなら、ぜひ友達にも教えてあげてね！開発者の[@nekonado](https://github.com/nekonado)も、あなたからのフィードバックを楽しみにしています！
-
-</details>

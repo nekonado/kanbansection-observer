@@ -55,20 +55,3 @@ Contributions are welcome! If you encounter any issues or have suggestions for i
 ## License
 
 This project is provided under the MIT License. For details, see the [LICENSE file](https://github.com/nekonado/kanbansection-observer/blob/main/LICENSE).
-
----
-
-<details>
-<summary>🥚🥚🥚🥚🥚</summary>
-
-### 🐣 Easter Egg: The Secret Behind "Kanbansection Observer" 🐣
-
-If you've opened this section, perhaps you're in search of something special? Congratulations, you've discovered a little secret! Did the name "Kanbansection Observer" ring any bells? Yes, it's a playful combination with the "Intersection Observer API".
-
-The joke here adds a bit of irony to the fact that this extension doesn't actually use the Intersection Observer API (it's implemented using the Mutation Observer API instead).
-
-But that's not all. For those who've found this easter egg, here's another secret: developing this extension wasn't just about improving work efficiency. We aim to bring more light not only to your kanban boards but to your daily tasks as well.
-
-So, if this little joke added some fun to your day, we're glad. And if this extension enhances your experience with kanban boards, please share it with friends! The developer, [@nekonado](https://github.com/nekonado), looks forward to your feedback!
-
-</details>
