@@ -154,7 +154,7 @@ chrome.runtime.onMessage.addListener((message) => {
   if (message.type === "checkboxStateChanged") {
     // チェックボックスの状態に応じて背景色を設定するかどうかを判断
     if (!message.isChecked) {
-      // // チェックボックスがチェックされている場合の処理
+      // チェックボックスがチェックされている場合の処理
       getOptions()
         .then((optionSets) => {
           optionSets.forEach(({ status }) => {
